@@ -20,6 +20,7 @@
 		74E873462587CFA2006E6DFD /* ShoesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E873452587CFA2006E6DFD /* ShoesRow.swift */; };
 		74E873482587D137006E6DFD /* ShoesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E873472587D137006E6DFD /* ShoesItem.swift */; };
 		74E8734A2587D66C006E6DFD /* ShoesListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E873492587D66C006E6DFD /* ShoesListener.swift */; };
+		74E8734E2587DB0B006E6DFD /* ShoesDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8734D2587DB0B006E6DFD /* ShoesDetail.swift */; };
 		F1022BEDF5AE4ACD4325E8A3 /* Pods_ShoesShopApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C860649FAE384A85EBAE4D /* Pods_ShoesShopApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		74E873452587CFA2006E6DFD /* ShoesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesRow.swift; sourceTree = "<group>"; };
 		74E873472587D137006E6DFD /* ShoesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesItem.swift; sourceTree = "<group>"; };
 		74E873492587D66C006E6DFD /* ShoesListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesListener.swift; sourceTree = "<group>"; };
+		74E8734D2587DB0B006E6DFD /* ShoesDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesDetail.swift; sourceTree = "<group>"; };
 		ABADAF51E804980091AD544E /* Pods-ShoesShopApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoesShopApp.release.xcconfig"; path = "Target Support Files/Pods-ShoesShopApp/Pods-ShoesShopApp.release.xcconfig"; sourceTree = "<group>"; };
 		C69A0C518A7C8DA1A53BEB98 /* Pods-ShoesShopApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoesShopApp.debug.xcconfig"; path = "Target Support Files/Pods-ShoesShopApp/Pods-ShoesShopApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 				74E873292587C3C1006E6DFD /* SceneDelegate.swift */,
 				74E873452587CFA2006E6DFD /* ShoesRow.swift */,
 				74E873472587D137006E6DFD /* ShoesItem.swift */,
+				74E8734D2587DB0B006E6DFD /* ShoesDetail.swift */,
 				74E8734C2587D6E1006E6DFD /* Firebase Listeners */,
 				74E8732B2587C3C2006E6DFD /* HomeView.swift */,
 				74E8732D2587C3C2006E6DFD /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 				74E8732A2587C3C1006E6DFD /* SceneDelegate.swift in Sources */,
 				74E8732C2587C3C2006E6DFD /* HomeView.swift in Sources */,
 				74E873422587CBC6006E6DFD /* Constants.swift in Sources */,
+				74E8734E2587DB0B006E6DFD /* ShoesDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

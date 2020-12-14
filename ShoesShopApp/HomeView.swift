@@ -24,7 +24,7 @@ struct HomeView: View {
             
             List(categories.keys.sorted(), id: \String.self) {
                 key in
-                ShoesRow(categoryName: "\(key) Shoes".uppercased(), shoes: self.categories[key]!)
+                ShoesRow(categoryName: "\(key) Shoes".uppercased(), shoeses: self.categories[key]!)
                     .frame(height: 320)
                     .padding(.top)
                     .padding(.bottom)

@@ -11,7 +11,7 @@ import SwiftUI
 struct ShoesRow: View {
     
     var categoryName: String
-    var shoes: [Shoes]
+    var shoeses: [Shoes]
     
     var body: some View {
         
@@ -23,11 +23,15 @@ struct ShoesRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 
                 HStack {
-                    ForEach(self.shoes) { shoes in
+                    ForEach(self.shoeses) { shoes in
                         
-                        ShoesItem(shoes: shoes)
-                            .frame(width: 300)
-                            .padding(.trailing, 30)
+                        NavigationLink(destination: ShoesDetail(shoes: shoes)) {
+                            ShoesItem(shoes: shoes)
+                                    .frame(width: 300)
+                                    .padding(.trailing, 30)
+                        }
+                        
+                        
                     }
                 }
             }
@@ -39,6 +43,6 @@ struct ShoesRow: View {
 
 struct ShoesRow_Previews: PreviewProvider {
     static var previews: some View {
-        ShoesRow(categoryName: "Adidas", shoes: shoesData)
+        ShoesRow(categoryName: "Adidas", shoeses: shoesData)
     }
 }
