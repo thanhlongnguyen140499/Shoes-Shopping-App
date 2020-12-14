@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var shoesListener = ShoesListener()
     
     var categories: [String : [Shoes]] {
           .init(
-              grouping: shoesData,
+            grouping: shoesListener.shoeses,
               by: {$0.category.rawValue}
           )
       }
