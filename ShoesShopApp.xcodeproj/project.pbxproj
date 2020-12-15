@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		74AC4AE02588B8A3009A9A63 /* OrderBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC4ADF2588B8A3009A9A63 /* OrderBasket.swift */; };
 		74AC4AE22588BC8F009A9A63 /* Basket Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC4AE12588BC8F009A9A63 /* Basket Listener.swift */; };
+		74AC4AE42588C884009A9A63 /* OrderBasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC4AE32588C884009A9A63 /* OrderBasketView.swift */; };
+		74AC4B082589016A009A9A63 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC4B072589016A009A9A63 /* Extensions.swift */; };
 		74E873282587C3C1006E6DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E873272587C3C1006E6DFD /* AppDelegate.swift */; };
 		74E8732A2587C3C1006E6DFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E873292587C3C1006E6DFD /* SceneDelegate.swift */; };
 		74E8732C2587C3C2006E6DFD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E8732B2587C3C2006E6DFD /* HomeView.swift */; };
@@ -30,6 +32,8 @@
 		45C860649FAE384A85EBAE4D /* Pods_ShoesShopApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoesShopApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AC4ADF2588B8A3009A9A63 /* OrderBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBasket.swift; sourceTree = "<group>"; };
 		74AC4AE12588BC8F009A9A63 /* Basket Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Basket Listener.swift"; sourceTree = "<group>"; };
+		74AC4AE32588C884009A9A63 /* OrderBasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBasketView.swift; sourceTree = "<group>"; };
+		74AC4B072589016A009A9A63 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		74E873242587C3C1006E6DFD /* ShoesShopApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoesShopApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E873272587C3C1006E6DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E873292587C3C1006E6DFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 				74E873432587CD27006E6DFD /* Helpers */,
 				74E873292587C3C1006E6DFD /* SceneDelegate.swift */,
 				74E873452587CFA2006E6DFD /* ShoesRow.swift */,
+				74AC4AE32588C884009A9A63 /* OrderBasketView.swift */,
 				74E873472587D137006E6DFD /* ShoesItem.swift */,
 				74E8734D2587DB0B006E6DFD /* ShoesDetail.swift */,
 				74E8734C2587D6E1006E6DFD /* Firebase Listeners */,
@@ -149,6 +154,7 @@
 			children = (
 				74E873492587D66C006E6DFD /* ShoesListener.swift */,
 				74AC4AE12588BC8F009A9A63 /* Basket Listener.swift */,
+				74AC4B072589016A009A9A63 /* Extensions.swift */,
 			);
 			path = "Firebase Listeners";
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 				74E8734A2587D66C006E6DFD /* ShoesListener.swift in Sources */,
 				74E873462587CFA2006E6DFD /* ShoesRow.swift in Sources */,
 				74E873402587CB93006E6DFD /* FirebaseReference.swift in Sources */,
+				74AC4AE42588C884009A9A63 /* OrderBasketView.swift in Sources */,
 				74E8733E2587C9F7006E6DFD /* Shoes.swift in Sources */,
 				74E873482587D137006E6DFD /* ShoesItem.swift in Sources */,
 				74E873282587C3C1006E6DFD /* AppDelegate.swift in Sources */,
@@ -281,6 +288,7 @@
 				74E8732C2587C3C2006E6DFD /* HomeView.swift in Sources */,
 				74E873422587CBC6006E6DFD /* Constants.swift in Sources */,
 				74E8734E2587DB0B006E6DFD /* ShoesDetail.swift in Sources */,
+				74AC4B082589016A009A9A63 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

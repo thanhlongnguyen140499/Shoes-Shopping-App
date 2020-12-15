@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var shoesListener = ShoesListener()
+    @State private var showingBasket = false
     
     var categories: [String : [Shoes]] {
           .init(
@@ -42,13 +43,20 @@ struct HomeView: View {
                                 
                 trailing:
                 
-                Button(action: {
-                    //code
-                    
-                    print("basket")
-                }, label: {
+                NavigationLink(destination: OrderBasketView()) {
+//                     Text("basket")
                     Image("basket")
-                })
+                }
+//                Button(action: {
+//                    //code
+//                    self.showingBasket.toggle()
+//                    print("basket")
+//                }, label: {
+//                    Image("basket")
+//                })
+                .sheet(isPresented: $showingBasket) {
+                        OrderBasketView()
+                }
             )
         }
         
