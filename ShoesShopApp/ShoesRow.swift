@@ -15,29 +15,29 @@ struct ShoesRow: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
-            
-            Text(self.categoryName)
-                .font(.title)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
+        NavigationView {
+            VStack(alignment: .leading) {
                 
-                HStack {
-                    ForEach(self.shoeses) { shoes in
-                        
-                        NavigationLink(destination: ShoesDetail(shoes: shoes)) {
-                            ShoesItem(shoes: shoes)
-                                    .frame(width: 300)
-                                    .padding(.trailing, 30)
+                Text(self.categoryName)
+                    .font(.title)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    
+                    HStack {
+                        ForEach(self.shoeses) { shoes in
+                            
+                            NavigationLink(destination: ShoesDetail(shoes: shoes)) {
+                                ShoesItem(shoes: shoes)
+                                        .frame(width: 300)
+                                        .padding(.trailing, 30)
+                            }
+                            
+                            
                         }
-                        
-                        
                     }
                 }
             }
         }
-        
-        
     }
 }
 

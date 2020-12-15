@@ -25,7 +25,7 @@ struct Shoes: Identifiable, Hashable{
     var price: Double
 }
 
-func drinkDictionaryFrom(shoes: Shoes) -> [String: Any] {
+func shoesDictionaryFrom(shoes: Shoes) -> [String: Any] {
     
     return NSDictionary(objects: [shoes.id,
                                   shoes.name,
@@ -45,7 +45,7 @@ func drinkDictionaryFrom(shoes: Shoes) -> [String: Any] {
 
 func createMenu() {
     for shoes in shoesData {
-        FirebaseReference(.Menu).addDocument(data: drinkDictionaryFrom(shoes: shoes))
+        FirebaseReference(.Menu).addDocument(data: shoesDictionaryFrom(shoes: shoes))
     }
 }
 

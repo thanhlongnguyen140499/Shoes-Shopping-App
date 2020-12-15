@@ -14,7 +14,6 @@ struct ShoesItem: View {
     var body: some View {
         
         VStack(alignment: .leading, spacing: 16) {
-            
             Image(shoes.imageName)
                 .resizable()
                 .renderingMode(.original)

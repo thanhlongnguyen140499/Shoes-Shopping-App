@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ShoesDetail: View {
     
+    @State private var showingAlert = false
+    
     var shoes: Shoes
     
     var body: some View {
@@ -51,13 +53,24 @@ struct ShoesDetail: View {
             HStack {
                 Spacer()
                 // Button
-                OrderButton(shoes: self.shoes)
+//                OrderButton(shoes: self.shoes)
+                
+//                Button(action: {
+//                    self.showingAlert.toggle()
+//                }, label: {
+//                    Text("Add to basket")
+//                })
+                OrderButton(showAlert: $showingAlert, shoes: shoes)
+                
                 Spacer()
             }
             .padding(.top, 50)
         } // End of Scroll View
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Added to Basket"), dismissButton: .default(Text("OK")))
+        }
     }
 }
 
@@ -69,15 +82,18 @@ struct ShoesDetail_Previews: PreviewProvider {
 
 struct OrderButton : View {
     
-//    @Binding var showAlert: Bool
+    @ObservedObject var basketListener = BasketListener()
+    
+    @Binding var showAlert: Bool
     
     var shoes: Shoes
     
     var body : some View {
         
         Button(action: {
-//            self.showAlert.toggle()
-            print("Add to basket, \(self.shoes.name)")
+            self.showAlert.toggle()
+            self.addItemToBasket()
+//            print("Add to basket, \(self.shoes.name)")
             
         }) {
             Text("Add to basket")
@@ -89,4 +105,19 @@ struct OrderButton : View {
         .cornerRadius(10)
     }
     
+    private func addItemToBasket() {
+        var orderBasket: OrderBasket!
+        
+        
+        if self.basketListener.orderBasket != nil {
+            orderBasket = self.basketListener.orderBasket
+        } else {
+            orderBasket = OrderBasket()
+            orderBasket.ownerId = "123"
+            orderBasket.id = UUID().uuidString
+        }
+        
+        orderBasket.add(self.shoes)
+        orderBasket.saveBasketToFirestore()
+    }
 }

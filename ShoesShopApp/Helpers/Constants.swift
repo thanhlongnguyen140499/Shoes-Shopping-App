@@ -19,7 +19,7 @@ public let kCATEGORY = "category"
 public let kIMAGENAME = "imagename"
 
 // Order
-public let kDRINKIDS = "drinkIds"
+public let kSHOESIDS = "shoesIds"
 public let kOWNERID = "ownerId"
 public let kCUSTOMERID = "customerId"
 public let kAMOUNT = "amount"
