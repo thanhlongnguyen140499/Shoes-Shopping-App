@@ -21,7 +21,7 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Text("Sign In")
+            Text(showingSignup ? "Sign Up" : "Sign In")
                 .fontWeight(.heavy)
                 .font(.largeTitle)
                 .padding([.bottom, .top], 20)
@@ -145,6 +145,20 @@ struct LoginView: View {
     
     private func resetPassword() {
         
+        if email != "" {
+            FUser.resetPassword(email: email) {
+                (error) in
+                if error != nil {
+                    print("error sending reset password, ", error!.localizedDescription)
+                    return
+                }
+                
+                print("please check your email")
+            }
+        } else {
+            // notify the suer
+            print("email is empty")
+        }
     }
 }
 
@@ -172,7 +186,7 @@ struct SignUpView : View {
                 Button(action: {
                     self.showingSignup.toggle()
                 }, label: {
-                    Text(showingSignup ? "Sign Up" : "Sign In")
+                    Text(showingSignup ? "Sign In" : "Sign Up")
                 })
                 .foregroundColor(.blue)
                 

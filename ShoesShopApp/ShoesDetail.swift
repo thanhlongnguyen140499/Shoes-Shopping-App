@@ -126,7 +126,7 @@ struct OrderButton : View {
             orderBasket = self.basketListener.orderBasket
         } else {
             orderBasket = OrderBasket()
-            orderBasket.ownerId = "123"
+            orderBasket.ownerId = FUser.currentId()
             orderBasket.id = UUID().uuidString
         }
         

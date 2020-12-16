@@ -18,21 +18,23 @@ class BasketListener: ObservableObject {
     
     func downloadBasket() {
         
-        FirebaseReference(.Basket).whereField(kOWNERID, isEqualTo: "123").addSnapshotListener{(
-            snapshot, error) in
-            
-            guard let snapshot = snapshot else {return}
-            
-            if !snapshot.isEmpty {
-                let basketData = snapshot.documents.first!.data()
+        if FUser.currentUser() != nil {
+            FirebaseReference(.Basket).whereField(kOWNERID, isEqualTo: FUser.currentId()).addSnapshotListener{(
+                snapshot, error) in
                 
-                getShoesesFromFirestore(withIds: basketData[kSHOESIDS] as? [String] ?? []) {
-                    (allShoeses) in
-                    let basket = OrderBasket()
-                    basket.ownerId = basketData[kOWNERID]  as? String
-                    basket.id = basketData[kID] as? String
-                    basket.items = allShoeses
-                    self.orderBasket = basket
+                guard let snapshot = snapshot else {return}
+                
+                if !snapshot.isEmpty {
+                    let basketData = snapshot.documents.first!.data()
+                    
+                    getShoesesFromFirestore(withIds: basketData[kSHOESIDS] as? [String] ?? []) {
+                        (allShoeses) in
+                        let basket = OrderBasket()
+                        basket.ownerId = basketData[kOWNERID]  as? String
+                        basket.id = basketData[kID] as? String
+                        basket.items = allShoeses
+                        self.orderBasket = basket
+                    }
                 }
             }
         }
