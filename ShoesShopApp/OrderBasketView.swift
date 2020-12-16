@@ -11,6 +11,7 @@ import SwiftUI
 struct OrderBasketView: View {
     
     @ObservedObject var basketListener = BasketListener()
+//    @State private var showingCheckout = false
     
     var body: some View {
         NavigationView {
@@ -37,8 +38,16 @@ struct OrderBasketView: View {
                             NavigationLink(destination: CheckoutView()) {
                                  Text("Place Order")
                             }
+//                            Button(action: {
+//                                self.showingCheckout.toggle()
+//                            }, label: {
+//                                Text("Place Order")
+//                            })
+//                                .sheet(isPresented: $showingCheckout) {
+//                                    CheckoutView()
+//                            }
+                            
                         }.disabled(self.basketListener.orderBasket?.items.isEmpty ?? true)
-                                
                     } // End of List
                     .navigationBarTitle("Order")
                     .listStyle(GroupedListStyle())

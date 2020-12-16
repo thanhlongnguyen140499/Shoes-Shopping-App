@@ -43,10 +43,36 @@ struct HomeView: View {
                                 
                 trailing:
                 
-                NavigationLink(destination: OrderBasketView()) {
-//                     Text("basket")
-                    Image("basket")
+                Section{
+                    if FUser.currentUser() != nil && FUser.currentUser()!.onBoarding {
+                        NavigationLink(destination: OrderBasketView()) {
+                            Image("basket")
+                        }
+                    }else if FUser.currentUser() != nil {
+                        NavigationLink(destination: FinishRegistrationView()) {
+                            Image("basket")
+                        }
+                    }else {
+                        NavigationLink(destination: LoginView()) {
+                            Image("basket")
+                        }
+                    }
                 }
+                // check login chua de mo basket
+//                .sheet(isPresented: $showingBasket) {
+//
+//                        if FUser.currentUser() != nil && FUser.currentUser()!.onBoarding {
+//
+//                            OrderBasketView()
+//                        } else if FUser.currentUser() != nil {
+//
+//                            FinishRegistrationView()
+//                        } else {
+//                            LoginView()
+//                        }
+//
+//                }
+                
 //                Button(action: {
 //                    //code
 //                    self.showingBasket.toggle()
@@ -54,9 +80,7 @@ struct HomeView: View {
 //                }, label: {
 //                    Image("basket")
 //                })
-                .sheet(isPresented: $showingBasket) {
-                        OrderBasketView()
-                }
+
             )
         }
         
