@@ -48,7 +48,7 @@ struct HomeView: View {
                         NavigationLink(destination: OrderBasketView()) {
                             Image("basket")
                         }
-                    }else if FUser.currentUser() != nil {
+                    } else if FUser.currentUser() != nil {
                         NavigationLink(destination: FinishRegistrationView()) {
                             Image("basket")
                         }

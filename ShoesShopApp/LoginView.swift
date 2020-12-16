@@ -90,6 +90,9 @@ struct LoginView: View {
             
             SignUpView(showingSignup: $showingSignup)
         } // End of VStack
+        .sheet(isPresented: $showingFinishReg) {
+            FinishRegistrationView()
+        }
     } // End of body
     
     private func loginUser() {
@@ -103,12 +106,12 @@ struct LoginView: View {
                             return
                         }
                         
-        //                print("user login successful, email is verified :", isEmailVerified)
+//                        print("user login successful, email is verified :", isEmailVerified)
                         if FUser.currentUser() != nil && FUser.currentUser()!.onBoarding {
-                            
+
                             self.presentationMode.wrappedValue.dismiss()
                         } else {
-                         
+
                             self.showingFinishReg.toggle()
                         }
                     }

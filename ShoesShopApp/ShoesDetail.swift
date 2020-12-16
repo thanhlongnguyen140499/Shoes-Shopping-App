@@ -11,6 +11,7 @@ import SwiftUI
 struct ShoesDetail: View {
     
     @State private var showingAlert = false
+    @State private var showingLogin = false
     
     var shoes: Shoes
     
@@ -60,7 +61,7 @@ struct ShoesDetail: View {
 //                }, label: {
 //                    Text("Add to basket")
 //                })
-                OrderButton(showAlert: $showingAlert, shoes: shoes)
+                OrderButton(showAlert: $showingAlert, showLogin: $showingLogin, shoes: shoes)
                 
                 Spacer()
             }
@@ -85,15 +86,19 @@ struct OrderButton : View {
     @ObservedObject var basketListener = BasketListener()
     
     @Binding var showAlert: Bool
+    @Binding var showLogin: Bool
     
     var shoes: Shoes
     
     var body : some View {
         
         Button(action: {
-            self.showAlert.toggle()
-            self.addItemToBasket()
-//            print("Add to basket, \(self.shoes.name)")
+            if FUser.currentUser() != nil && FUser.currentUser()!.onBoarding {
+                self.showAlert.toggle()
+                self.addItemToBasket()
+            } else {
+                self.showLogin.toggle()
+            }
             
         }) {
             Text("Add to basket")
@@ -103,6 +108,14 @@ struct OrderButton : View {
         .font(.headline)
         .background(Color.blue)
         .cornerRadius(10)
+        .sheet(isPresented: self.$showLogin) {
+            if FUser.currentUser() != nil {
+                FinishRegistrationView()
+            } else {
+                LoginView()
+            }
+        }
+
     }
     
     private func addItemToBasket() {
